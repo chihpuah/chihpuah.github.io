@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Иван Карнаухов — Портфолио</title>
+  <style>
+    :root {
+      --main-color: #1e1e2f;
+      --accent-color: #4e9eff;
+      --text-color: #e8e8e8;
+      --bg-color: #121218;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, -apple-system, sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    header {
+      text-align: center;
+      padding: 80px 20px 40px;
+      background: linear-gradient(180deg, #1e1e2f 0%, #121218 100%);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #aaa;
+    }
+
+    section {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+
+    h2 {
+      color: var(--accent-color);
+      border-left: 4px solid var(--accent-color);
+      padding-left: 10px;
+      font-size: 1.5rem;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    li::before {
+      content: "• ";
+      color: var(--accent-color);
+    }
+
+    .project {
+      margin-bottom: 1.5rem;
+      padding: 1rem;
+      background: #1c1c27;
+      border-radius: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 0.9rem;
+      color: #888;
+      border-top: 1px solid #2a2a3a;
+    }
+
+    a {
+      color: var(--accent-color);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Иван Карнаухов</h1>
+    <p>18 лет • Студент НИУ ВШЭ</p>
+  </header>
+
+  <section id="about">
+    <h2>Обо мне</h2>
+    <p>Я начинающий программист и студент Национального исследовательского университета «Высшая школа экономики». 
+       Интересуюсь современными технологиями, разработкой программного обеспечения и анализом данных. 
+       Стремлюсь развиваться как специалист и создавать полезные цифровые продукты.</p>
+  </section>
+
+  <section id="skills">
+    <h2>Навыки</h2>
+    <ul>
+      <li>Программирование на Python и C++</li>
+      <li>Основы веб-разработки (HTML, CSS, JS)</li>
+      <li>Git и работа с GitHub</li>
+      <li>Работа с Linux и командной строкой</li>
+      <li>Базовые знания алгоритмов и структур данных</li>
+    </ul>
+  </section>
+
+  <section id="education">
+    <h2>Образование</h2>
+    <p><strong>НИУ ВШЭ</strong> — студент направления «Прикладная математика и информатика» (2025 – 2029)</p>
+  </section>
+
+  <section id="projects">
+    <h2>Проекты</h2>
+    <div class="project">
+      <h3>Голосовой ассистент</h3>
+      <p>Голосовой ассистент с синтезом и распознаванием речи, созданный в Python с использованием
+         нейросетей ElevenLabs, Vosk и др., OpenaiAPI, а также машинного обучения для выполнения повседневных задач, 
+         связанных с голосовым управлением компьютером.</p>
+    </div>
+  </section>
+
+  <section id="contacts">
+    <h2>Контакты</h2>
+    <p>Email: <a href="mailto:ivan.karnaukhov@example.com">ivan.karnaukhov@internet.com</a></p>
+    <p>GitHub: <a href="https://github.com/chihpuah" target="_blank">github.com/chihpuah</a></p>
+  </section>
+
+  <footer>
+    © 2025 Иван Карнаухов. Все права не защищены.
+  </footer>
+</body>
+</html>
