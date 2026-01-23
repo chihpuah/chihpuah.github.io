@@ -205,7 +205,49 @@
       .hero { grid-template-columns: 1fr; }
       .hero h1 { font-size: 2.6rem; }
     }
-  </style>
+      .aura-layer {
+      position: fixed;
+      inset: -20%;
+      background: radial-gradient(circle at center, rgba(139,92,246,0.25), transparent 60%);
+      filter: blur(120px);
+      z-index: 0;
+      transition: transform 0.4s ease-out;
+    }
+    .layer2 {
+      background: radial-gradient(circle at center, rgba(34,211,238,0.25), transparent 60%);
+    }
+
+    .float-orb {
+      position: fixed;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,0.6), rgba(255,255,255,0.05));
+      backdrop-filter: blur(20px);
+      animation: float 18s infinite ease-in-out;
+      z-index: 1;
+    }
+    .orb1 { top: 20%; left: 10%; animation-delay: 0s; }
+    .orb2 { top: 60%; left: 70%; animation-delay: 6s; }
+    .orb3 { top: 40%; left: 40%; animation-delay: 12s; }
+
+    @keyframes float {
+      0%,100% { transform: translateY(0px); }
+      50% { transform: translateY(-40px); }
+    }
+
+    textarea.code {
+      width: 100%;
+      min-height: 160px;
+      background: rgba(0,0,0,0.35);
+      color: #eaffff;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 16px;
+      padding: 16px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.95rem;
+    }
+</style>
 </head>
 <body>
 
@@ -243,6 +285,12 @@
 </section>
 
 <section id="materials">
+  <h2 data-aos="fade-up">База знаний</h2>
+
+  <div class="card" data-aos="fade-up">
+    <p><strong>Как проходят занятия:</strong></p>
+    <p>Чередуем форматы: одно занятие — Python и программирование, следующее — задачи «руками» (логика, комбинаторика, теория).</p>
+  </div>
   <h2 data-aos="fade-up">Материалы</h2>
 
   <div class="card" data-aos="fade-up">
@@ -260,6 +308,51 @@
     <div class="links">
       <a href="https://kompege.ru" target="_blank">kompege.ru</a>
     </div>
+  </div>
+</section>
+
+<section data-aos="fade-up">
+  <h2>Упражнения на программирование</h2>
+
+  <div class="card">
+    <p><strong>1.</strong> Найдите ошибки и исправьте:</p>
+    <textarea class="code">x = int(input())
+f = 1
+for i in range(x):
+    f *= i
+print(f)</textarea>
+  </div>
+
+  <div class="card">
+    <p><strong>2.</strong> Исправьте программу:</p>
+    <textarea class="code">x = int(input())
+p = 0
+while x > 9:
+    p*= x % 10
+    x //= 10</textarea>
+  </div>
+
+  <div class="card">
+    <p><strong>3.</strong> Найдите ошибки и исправьте:</p>
+    <textarea class="code">x = int(input())
+md = x % 10
+while x > 0:
+    d = x % 10
+    if d % 3 == 0:
+       if d > md:
+            md = d
+   x = x // 10
+if md == 0:
+   print('NO')
+else:
+   print('YES')</textarea>
+  </div>
+</section>
+
+<section data-aos="fade-up">
+  <h2>Комбинаторика</h2>
+  <div class="card">
+    <p>Сколько слов длины 4, начинающихся с согласной и заканчивающихся гласной, можно составить из букв слова <strong>АУРА</strong>, если буквы могут повторяться?</p>
   </div>
 </section>
 
@@ -319,6 +412,25 @@ tasks.forEach((t, i) => {
   card.appendChild(ans);
   card.appendChild(skull);
   container.appendChild(card);
+});
+</script>
+
+
+<!-- PARALLAX AURA OBJECTS -->
+<div class="aura-layer layer1"></div>
+<div class="aura-layer layer2"></div>
+<div class="float-orb orb1"></div>
+<div class="float-orb orb2"></div>
+<div class="float-orb orb3"></div>
+
+<script>
+// Parallax aura movement
+window.addEventListener('mousemove', e => {
+  const x = (e.clientX / window.innerWidth - 0.5) * 20;
+  const y = (e.clientY / window.innerHeight - 0.5) * 20;
+  document.querySelectorAll('.aura-layer').forEach((l, i) => {
+    l.style.transform = `translate(${x*(i+1)}px, ${y*(i+1)}px)`;
+  });
 });
 </script>
 
