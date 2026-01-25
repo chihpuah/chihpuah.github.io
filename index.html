@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.22.1/full/pyodide.js"></script>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Пробное занятие — Информатика</title>
@@ -751,12 +753,27 @@ const tasks = [
   {q: 'Какой метод нужно использовать для преобразования строки "1337" в целое число?', a: ['int','str','float','chr']},
   {q: 'Сколькими способами из 10 человек можно выбрать двоих (порядок не важен)?', a: ['90','45','20','100']},
   {q: 'Имеется кортеж T = (4, 2, 3). Как получить (1, 2, 3)?', a: ['T[0] = 1','T = T.replace(4, 1)','T = (1,) + T[1:]']},
-  {q: 'Сколько раз код напечатает число 52?', a: ['1','100','200','20000']},
+  {q: 'Сколько раз код напечатает число 52?',
+   code: `a = 1
+while a < 2:
+    for i in range(100):
+        for j in range(200):
+            print(52)
+    a += 1`,
+   a: ['1','100','200','20000']},
   {q: 'Лучший тип данных для уникальных символов строки?', a: ['словарь','кортеж','список','множество']},
   {q: 'Как объявить функцию?', a: ['def func():','function func():','def: func()','func()']},
-  {q: 'Что выведет код со строками?', a: ['нфКап','нфоКапу','ИнКа','ИнфКап']},
+  {q: 'Что выведет код со строками?',
+   code: `s = "Информатика"
+g = "Капучинатор"
+print(s[1:3] + g[:3])`,
+   a: ['нфКап','нфоКапу','ИнКа','ИнфКап']},
   {q: 'Сколько слов из букв Т, О, Р, Т?', a: ['24','12','4*4*4*4']},
-  {q: 'Результат multiply(3)?', a: ['5','6','ошибка','ничего']},
+  {q: 'Результат multiply(3)?',
+   code: `def multiply(a, b=2):
+    return a*b if a > b else a + b
+print(multiply(3))`,
+   a: ['5','6','ошибка','ничего']},
   {q: '25 в двоичной системе?', a: ['1001','11001','10011']}
 ];
 
@@ -767,7 +784,7 @@ tasks.forEach((t, i) => {
   const card = document.createElement('div');
   card.className = 'card test-question';
   card.setAttribute('data-aos','fade-up');
-  card.innerHTML = `<h3>${i+1}. ${t.q}</h3>`;
+  card.innerHTML = `<h3>${i+1}. ${t.q}</h3>` + (t.code ? `<textarea class="code" spellcheck="false">${t.code}</textarea>` : '');
 
   const ans = document.createElement('div');
   ans.className = 'answers';
@@ -886,5 +903,150 @@ document.querySelectorAll(magnetSelector).forEach(el => {
 });
 </script>
 
+<section data-aos="fade-up">
+  <h2>То, о чем невозможно молчать</h2>
+
+  <!-- Карточка для Теории Игр -->
+  <div class="card">
+    <div class="pills">
+      <span class="pill"><strong>Теория игр</strong></span>
+    </div>
+    <div class="carousel">
+      <!-- Пункт 1 -->
+      <div class="carousel-item">
+        <h3>1. Собственно куча</h3>
+        <p>
+          Два игрока, Петя и Ваня, играют в следующую игру. Перед игроками лежит куча камней. Игроки ходят по очереди, первый ход делает Петя. За один ход игрок может:
+          <ul>
+            <li>убрать из кучи 3 камня;</li>
+            <li>убрать из кучи 8 камней;</li>
+            <li>уменьшить количество камней в куче в 3 раза (количество камней, полученное при делении, округляется до меньшего).</li>
+          </ul>
+          Игра завершается, когда количество камней в куче становится не более 16. Победителем считается игрок, сделавший последний ход, то есть первым получивший кучу из 16 или менее камней. В начальный момент в куче было S камней, S ≥17.
+          <br><br>
+          <strong>Вопрос:</strong> Укажите минимальное значение S, при котором Петя не может выиграть за один ход, но при любом ходе Пети Ваня может выиграть своим первым ходом.
+        </p>
+        <textarea class="code">/* Ваш код здесь */</textarea>
+      </div>
+      <!-- Пункт 2 -->
+      <div class="carousel-item">
+        <h3>2. Второй ход Пети</h3>
+        <p>
+          Для игры, описанной в задании 19, найдите два наименьших значения S, при которых у Пети есть выигрышная стратегия, причём одновременно выполняются два условия:
+          <ul>
+            <li>Петя не может выиграть за один ход;</li>
+            <li>Петя может выиграть своим вторым ходом независимо от того, как будет ходить Ваня.</li>
+          </ul>
+          Найденные значения запишите в ответе в порядке возрастания.
+        </p>
+        <textarea class="code">/* Ваш код здесь */</textarea>
+      </div>
+      <!-- Пункт 3 -->
+      <div class="carousel-item">
+        <h3>3. Стратегия Вани</h3>
+        <p>
+          Для игры, описанной в задании 19, найдите минимальное значение S, при котором одновременно выполняются два условия:
+          <ul>
+            <li>у Вани есть выигрышная стратегия, позволяющая ему выиграть первым или вторым ходом при любой игре Пети;</li>
+            <li>у Вани нет стратегии, которая позволит ему гарантированно выиграть первым ходом.</li>
+          </ul>
+        </p>
+        <textarea class="code">/* Ваш код здесь */</textarea>
+      </div>
+    </div>
+    <div class="carousel-controls">
+      <button class="carousel-prev">← Назад</button>
+      <button class="carousel-next">Вперёд →</button>
+    </div>
+  </div>
+</section>
+
+<!-- Стиль для карусели -->
+<style>
+  .carousel {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    max-width: 100%;
+  }
+
+  .carousel-item {
+    min-width: 100%;
+    transition: transform 0.3s ease-in-out;
+    padding: 20px;
+  }
+
+  .carousel-controls {
+    text-align: center;
+    margin-top: 15px;
+  }
+
+  .carousel-prev, .carousel-next {
+    background-color: #8b5cf6;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background-color 0.2s ease;
+  }
+
+  .carousel-prev:hover, .carousel-next:hover {
+    background-color: #7b4bc7;
+  }
+
+  .code {
+    width: 100%;
+    min-height: 170px;
+    background: rgba(0,0,0,.38);
+    color: #eaffff;
+    border: 1px solid rgba(255,255,255,.18);
+    border-radius: 18px;
+    padding: 16px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .95rem;
+    line-height: 1.55;
+    box-shadow: 0 20px 60px rgba(0,0,0,.52);
+    margin-top: 20px;
+  }
+
+  .code:focus {
+    outline: none;
+    border-color: rgba(26,166,184,.45);
+    box-shadow: 0 0 0 4px rgba(26,166,184,.10), 0 26px 90px rgba(0,0,0,.62);
+  }
+</style>
+
+<script>
+  // Инициализация карусели
+  let currentItem = 0;
+  const items = document.querySelectorAll('.carousel-item');
+  const prevBtn = document.querySelector('.carousel-prev');
+  const nextBtn = document.querySelector('.carousel-next');
+
+  const updateCarousel = () => {
+    items.forEach((item, index) => {
+      item.style.transform = `translateX(-${currentItem * 100}%)`;
+    });
+  };
+
+  prevBtn.addEventListener('click', () => {
+    if (currentItem > 0) {
+      currentItem--;
+    }
+    updateCarousel();
+  });
+
+  nextBtn.addEventListener('click', () => {
+    if (currentItem < items.length - 1) {
+      currentItem++;
+    }
+    updateCarousel();
+  });
+</script>
+
+
+  
 </body>
 </html>
