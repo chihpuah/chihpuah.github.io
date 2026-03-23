@@ -5,7 +5,7 @@
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Пробное занятие — Информатика</title>
+  <title>Пробное занятие — Математика</title>
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -610,7 +610,7 @@
 <header class="topbar" data-aos="fade-down">
   <div class="brand">
     <div class="logo" aria-hidden="true"></div>
-    <span class="chip">ИНФОРМАТИКА</span>
+    <span class="chip">МАТЕМАТИКА</span>
     <span style="opacity:.95">Пробное занятие</span>
   </div>
 
@@ -625,15 +625,15 @@
 
 <section class="hero">
   <div data-aos="fade-right">
-    <h1>Пробное занятие по информатике</h1>
+    <h1>Пробное занятие по математике</h1>
     <p>
-      наслаждаемся решением задач по информатике
+      наслаждаемся решением задач по математике
     </p>
 
     <div class="pills" aria-label="Формат">
       <span class="pill"><strong>Диагностика</strong> · 10 вопросов</span>
-      <span class="pill"><strong>Питон</strong> · базовые ошибки</span>
-      <span class="pill"><strong>Логика</strong> · комбинаторика</span>
+      <span class="pill"><strong>Алгебра и геометрия</strong> · частые ошибки</span>
+      <span class="pill"><strong>Логика</strong> · интересные задачки</span>
     </div>
 
     <div class="cta-row">
@@ -675,7 +675,7 @@
 
   <div class="card" data-aos="fade-up">
     <p><strong>Как проходят занятия:</strong></p>
-    <p>Чередуем форматы: одно занятие — Python и программирование, следующее — задачи «руками» (логика, комбинаторика, теория).</p>
+    <p>Чередуем форматы: одно занятие — первая часть, следующее — теория и задачи второй части</p>
   </div>
 
   <h2 data-aos="fade-up">Материалы</h2>
@@ -686,106 +686,82 @@
   </div>
 
   <div class="card" data-aos="fade-up">
-    <h3 style="margin-top:0">📘 Конспект: теория игр</h3>
-    <iframe src="Теория Игр.pdf"></iframe>
+    <h3 style="margin-top:0">📘 Конспект: стереометрия</h3>
+    <iframe src="Стереометрия.pdf"></iframe>
   </div>
 
   <div class="card" data-aos="fade-up">
     <h3 style="margin-top:0">🔗 Базы заданий</h3>
     <div class="links">
-      <a href="https://kompege.ru" target="_blank" rel="noreferrer">kompege.ru <span style="opacity:.65; font-family:'JetBrains Mono', monospace; font-size:12px">↗</span></a>
+      <a href="https://3.shkolkovo.online/catalog?SubjectId=1" target="_blank" rel="noreferrer">школково <span style="opacity:.65; font-family:'JetBrains Mono', monospace; font-size:12px">↗</span></a>
     </div>
   </div>
 </section>
 
 <section data-aos="fade-up">
-  <h2>Упражнения на программирование</h2>
+  <h2>Упражнения на внимательность</h2>
 
   <div class="card">
-    <p><strong>1.</strong> Найдите ошибки и исправьте:</p>
-    <textarea class="code">x = int(input())
-f = 1
-for i in range(x):
-    f *= i
-print(f)</textarea>
+    <p><strong>1.</strong> Найдите ошибку в решении уравнения:</p>
+    <p style="font-family:'JetBrains Mono', monospace; font-size:1.1rem; color:rgba(238,240,255,.85)">Решите уравнение: (2x - 2)^2 + 4x = 0</p>
+    <textarea class="code">(2x - 2)^2 + 4x = 4x^2 - 4 = 0, откуда x = 1</textarea>
+    <p>Подсказка: Вспомните, как раскрывать скобки.</p>
   </div>
 
   <div class="card">
-    <p><strong>2.</strong> Исправьте программу:</p>
-    <textarea class="code">x = int(input())
-p = 0
-while x > 9:
-    p*= x % 10
-    x //= 10</textarea>
+    <p><strong>2.</strong> Найдите ошибку в решении уравнения:</p>
+    <p style="font-family:'JetBrains Mono', monospace; font-size:1.1rem; color:rgba(238,240,255,.85)">Решите уравнение: √x^2 - 2 = 0</p>
+    <textarea class="code">√x^2 - 2 = 0 → x = 2</textarea>
+    <p>Подсказка: Правильно ли извлекается корень?</p>
   </div>
 
   <div class="card">
-    <p><strong>3.</strong> Найдите ошибки и исправьте:</p>
-    <textarea class="code">x = int(input())
-md = x % 10
-while x > 0:
-    d = x % 10
-    if d % 3 == 0:
-       if d > md:
-            md = d
-   x = x // 10
-if md == 0:
-   print('NO')
-else:
-   print('YES')</textarea>
+    <p><strong>3.</strong> Найдите ошибку в решении уравнения:</p>
+    <p style="font-family:'JetBrains Mono', monospace; font-size:1.1rem; color:rgba(238,240,255,.85)">Решите уравнение: √(x^2 + 4x) = x + 2</p>
+    <textarea class="code">√(x^2 + 4x) = x + 2 → x^2 + 4x = (x + 2)^2 - далее решаем квадратное уравнение</textarea>
+    <p>Подсказка: Внимательно извлекайте корень из выражения с переменной и учитывайте знак.</p>
   </div>
 </section>
 
-<section data-aos="fade-up">
-  <h2>Комбинаторика</h2>
-  <div class="card">
-    <p>Сколько слов длины 4, начинающихся с согласной и заканчивающихся гласной, можно составить из букв слова <strong>АУРА</strong>, если буквы могут повторяться?</p>
-  </div>
-</section>
+
 
 <div class="counter">☠️ уничтожено: <span id="count">0</span></div>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>AOS.init({ once: true, duration: 800 });</script>
 
+
+
 <script>
+// Пример задач
 const tasks = [
-  {q: 'Какой метод нужно использовать для преобразования строки "1337" в целое число?', a: ['int','str','float','chr']},
+  {q: 'Можно ли доску размером 5 × 5 заполнить доминошками размером 1 × 2?', a: ['да','нет','не знаю','наверное']},
   {q: 'Сколькими способами из 10 человек можно выбрать двоих (порядок не важен)?', a: ['90','45','20','100']},
-  {q: 'Имеется кортеж T = (4, 2, 3). Как получить (1, 2, 3)?', a: ['T[0] = 1','T = T.replace(4, 1)','T = (1,) + T[1:]']},
-  {q: 'Сколько раз код напечатает число 52?',
-   code: `a = 1
-while a < 2:
-    for i in range(100):
-        for j in range(200):
-            print(52)
-    a += 1`,
-   a: ['1','100','200','20000']},
-  {q: 'Лучший тип данных для уникальных символов строки?', a: ['словарь','кортеж','список','множество']},
-  {q: 'Как объявить функцию?', a: ['def func():','function func():','def: func()','func()']},
-  {q: 'Что выведет код со строками?',
-   code: `s = "Информатика"
-g = "Капучинатор"
-print(s[1:3] + g[:3])`,
-   a: ['нфКап','нфоКапу','ИнКа','ИнфКап']},
+  {q: 'Чему равна медиана, проведенная из прямого угла, в треугольнике с гипотенузой равной 16?', a: ['8','4','зависит от катетов']},
+  {q: 'В равностороннем треугольнике ABC проведён перпендикуляр из середины стороны BC к стороне AC. В каком отношении он делит эту сторону?',
+   a: ['1/2','2/3','1/3','3/4']},
+  {q: 'ax + 3 = 0. При каких a уравнение имеет одно решение?', a: ['a = 0','все, кроме 0','таких нет','при всех']},
+  {q: 'Какое из этих уравнений задает прямую?', a: ['x^2 + y^2 = 1','x^2 + y = 1','x + y = 1','x + y <= 1']},
+  {q: 'В каких точках тригонометрической окружности синус равен 0.5?',
+   a: ['30 градусов и 150 градусов','60 и 120','45 и 225','0 и 180']},
   {q: 'Сколько слов из букв Т, О, Р, Т?', a: ['24','12','4*4*4*4']},
-  {q: 'Результат multiply(3)?',
-   code: `def multiply(a, b=2):
-    return a*b if a > b else a + b
-print(multiply(3))`,
-   a: ['5','6','ошибка','ничего']},
-  {q: '25 в двоичной системе?', a: ['1001','11001','10011']}
+  {q: 'Чему равен логарифм по основанию 10 от 100?',
+   a: ['5','2','10','0.5']},
+  {q: 'Решите уравнение: 2x^2 - 2xy + y^2 = 0', a: ['x = y = 0','решений нет','это невозможно решить']}
 ];
 
+// Инициализация контейнера для вопросов
 const container = document.getElementById('questions');
 let destroyed = 0;
 
+// Заполняем контейнер вопросами
 tasks.forEach((t, i) => {
   const card = document.createElement('div');
   card.className = 'card test-question';
   card.setAttribute('data-aos','fade-up');
-  card.innerHTML = `<h3>${i+1}. ${t.q}</h3>` + (t.code ? `<textarea class="code" spellcheck="false">${t.code}</textarea>` : '');
+  card.innerHTML = `<h3>${i+1}. ${t.q}</h3>`; // Отображаем текст вопроса
 
+  // Если код присутствует, отображаем его
   const ans = document.createElement('div');
   ans.className = 'answers';
 
@@ -799,6 +775,7 @@ tasks.forEach((t, i) => {
     ans.appendChild(b);
   });
 
+  // Добавляем кнопку для уничтожения
   const skull = document.createElement('div');
   skull.className = 'skull';
   skull.textContent = '💀 уничтожено';
@@ -811,9 +788,10 @@ tasks.forEach((t, i) => {
 
   card.appendChild(ans);
   card.appendChild(skull);
-  container.appendChild(card);
+  container.appendChild(card); // Добавляем карточку в контейнер
 });
 </script>
+
 
 <script>
 // Parallax aura + shards movement
@@ -904,54 +882,34 @@ document.querySelectorAll(magnetSelector).forEach(el => {
 </script>
 
 <section data-aos="fade-up">
-  <h2>То, о чем невозможно молчать</h2>
+  <h2>Загадки</h2>
 
-  <!-- Карточка для Теории Игр -->
+  <!-- Карточка с задачками -->
   <div class="card">
     <div class="pills">
-      <span class="pill"><strong>Теория игр</strong></span>
+      <span class="pill"><strong>Задачки из тик-тока</strong></span>
     </div>
     <div class="carousel">
       <!-- Пункт 1 -->
       <div class="carousel-item">
-        <h3>1. Собственно куча</h3>
+        <h3>1. Бейсбол</h3>
         <p>
-          Два игрока, Петя и Ваня, играют в следующую игру. Перед игроками лежит куча камней. Игроки ходят по очереди, первый ход делает Петя. За один ход игрок может:
-          <ul>
-            <li>убрать из кучи 3 камня;</li>
-            <li>убрать из кучи 8 камней;</li>
-            <li>уменьшить количество камней в куче в 3 раза (количество камней, полученное при делении, округляется до меньшего).</li>
-          </ul>
-          Игра завершается, когда количество камней в куче становится не более 16. Победителем считается игрок, сделавший последний ход, то есть первым получивший кучу из 16 или менее камней. В начальный момент в куче было S камней, S ≥17.
-          <br><br>
-          <strong>Вопрос:</strong> Укажите минимальное значение S, при котором Петя не может выиграть за один ход, но при любом ходе Пети Ваня может выиграть своим первым ходом.
+          Бита и мяч стоят вместе 1 доллар и 10 центов. Бита дороже мяча на 1 доллар. Сколько стоит мяч? 
         </p>
-        <textarea class="code">/* Ваш код здесь */</textarea>
       </div>
       <!-- Пункт 2 -->
       <div class="carousel-item">
-        <h3>2. Второй ход Пети</h3>
+        <h3>2. Размножение</h3>
         <p>
-          Для игры, описанной в задании 19, найдите два наименьших значения S, при которых у Пети есть выигрышная стратегия, причём одновременно выполняются два условия:
-          <ul>
-            <li>Петя не может выиграть за один ход;</li>
-            <li>Петя может выиграть своим вторым ходом независимо от того, как будет ходить Ваня.</li>
-          </ul>
-          Найденные значения запишите в ответе в порядке возрастания.
+          В стакане находятся бактерии. Каждая бактерия делится пополам каждую секунду. Через минуту стакан полон. Через какое время стакан был заполнен наполовину? 
         </p>
-        <textarea class="code">/* Ваш код здесь */</textarea>
       </div>
       <!-- Пункт 3 -->
       <div class="carousel-item">
-        <h3>3. Стратегия Вани</h3>
+        <h3>3. Парадокс Монти-Холла</h3>
         <p>
-          Для игры, описанной в задании 19, найдите минимальное значение S, при котором одновременно выполняются два условия:
-          <ul>
-            <li>у Вани есть выигрышная стратегия, позволяющая ему выиграть первым или вторым ходом при любой игре Пети;</li>
-            <li>у Вани нет стратегии, которая позволит ему гарантированно выиграть первым ходом.</li>
-          </ul>
+          Представьте, что вы участвуете в игре, где нужно выбрать одну из трёх дверей. За одной дверью — автомобиль, за двумя — козы. Вы выбираете дверь №1, ведущий открывает одну из оставшихся дверей, например №3, за которой коза. Ведущий предлагает вам сменить выбор и выбрать дверь №2. Увеличатся ли ваши шансы выиграть автомобиль, если вы измените выбор? 
         </p>
-        <textarea class="code">/* Ваш код здесь */</textarea>
       </div>
     </div>
     <div class="carousel-controls">
@@ -960,6 +918,7 @@ document.querySelectorAll(magnetSelector).forEach(el => {
     </div>
   </div>
 </section>
+
 
 <!-- Стиль для карусели -->
 <style>
